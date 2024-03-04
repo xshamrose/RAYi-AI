@@ -133,12 +133,16 @@ function Candetect() {
         </div>
         <div>
           <Card title="Output" hoverable>
-            <textarea
-              className="text-area"
-              placeholder=""
-              value={loading ? "Loading..." : responseData}
-              readOnly
-            />
+            <div className="text-area">
+              {loading ? (
+                <div className="loader-all">
+                  <div className="loader"></div>
+                  <p>loading...</p>
+                </div>
+              ) : (
+                responseData
+              )}
+            </div>
           </Card>
         </div>
       </div>
