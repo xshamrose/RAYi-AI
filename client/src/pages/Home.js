@@ -1,20 +1,13 @@
 import React, { useState } from "react";
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  // UploadOutlined,
-  // UserOutlined,
-  // VideoCameraOutlined,
-} from "@ant-design/icons";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Layout, Button, theme } from "antd";
 import { AntDesignOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
 import cancer from "../assets/pink.svg";
 // import count from "../assets/count.svg";
-// import Header from "./Header";
 const { Header, Sider, Content } = Layout;
-const Home = ({ setTitle, setContent }) => {
+const Home = () => {
   const [collapsed, setCollapsed] = useState(true);
 
   const {
@@ -23,19 +16,14 @@ const Home = ({ setTitle, setContent }) => {
   const navigate = useNavigate();
 
   const handleClickCardOne = () => {
-    navigate("/Can");
-    setTitle("Breast Cancer Detector");
-    setContent(
-      "Detect breast cancer early with our advanced screening technology.Get accurate results and timely treatment for better outcomes."
-    );
+    navigate("/BreastCancerDetector-app");
   };
-  const handleClickCardTwo = () => {
-    navigate("/Pipe");
-    setTitle("Pipe Counting");
-    setContent(
-      "Our pipe counting detector uses advanced algorithms to accuratelycount and monitor pipes in industrial settings. Improve efficiency and reduce errors with automated pipe detection."
-    );
-  };
+  //Future update
+  // const handleClickCardTwo = () => {
+  //   navigate("/Pipe");
+  //   setTitle("Pipe Counting");
+
+  // };
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -51,28 +39,6 @@ const Home = ({ setTitle, setContent }) => {
           }}
           icon={<AntDesignOutlined />}
         />
-        {/* <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
-            },
-            {
-              key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
-        /> */}
       </Sider>
       <Layout>
         <Header
@@ -129,6 +95,9 @@ const Home = ({ setTitle, setContent }) => {
               </p>
             </div>
           </div>
+
+          {/*   -----Pipe Counting Dectector for Future Use-------
+          
           <div className="card" onClick={handleClickCardTwo}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -160,9 +129,9 @@ const Home = ({ setTitle, setContent }) => {
                 <circle cx="237" cy="261" r="8" />
                 <circle cx="390" cy="382" r="8" />
               </g>
-            </svg>
-            {/* <img src={count} alt="Counting" className="count" /> */}
-            <div className="card__content">
+            </svg> */}
+          {/* <img src={count} alt="Counting" className="count" /> */}
+          {/* <div className="card__content">
               <p className="card__title">Pipe Counting</p>
               <p className="card__description">
                 Our pipe counting detector uses advanced algorithms to
@@ -171,7 +140,7 @@ const Home = ({ setTitle, setContent }) => {
                 detection.
               </p>
             </div>
-          </div>
+          </div> */}
         </Content>
       </Layout>
     </Layout>

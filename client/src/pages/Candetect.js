@@ -1,40 +1,39 @@
 import React, { useState } from "react";
 import "../pages/Candetect.css";
-// import Header from "./Header";
 import { Card } from "antd";
 import deleteicon from "../assets/delete-.svg";
 import axios from "axios";
-// import edit from "../assets/edit-1.svg";
 
-function Candetect({ title, content }) {
-  const [imageUrl, setImageUrl] = useState(null);
+function Candetect() {
+  const [imageFile, setImageFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [responseData, setResponseData] = useState("");
 
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setImageUrl(imageUrl);
+      setImageFile(file);
     }
   };
 
   const handleClearImage = () => {
-    setImageUrl(null);
+    setImageFile(null);
     setErrorMessage("");
   };
 
   const handleDeleteImage = () => {
-    setImageUrl(null);
+    setImageFile(null);
   };
 
   const handleSubmit = () => {
-    if (!imageUrl) {
+    if (!imageFile) {
       setErrorMessage("Please upload an Image");
       console.log("Please upload an Image");
     } else {
       const formData = new FormData();
-      formData.append("image", imageUrl);
-
+      formData.append("image", imageFile);
+      setLoading(true);
       axios
         .post("http://ct.rayi.in:5002/predicttest", formData, {
           headers: {
@@ -42,25 +41,24 @@ function Candetect({ title, content }) {
           },
         })
         .then((response) => {
-          alert(response.data.message);
+          setLoading(false);
+          setResponseData(response.data);
+          console.log(response.data);
         })
         .catch((error) => {
           if (error.response) {
-            // Request was made and server responded with a status code
             console.error("Error Response Data:", error.response.data);
             console.error("Error Response Status:", error.response.status);
           } else if (error.request) {
-            // The request was made but no response was received
             console.error("No response received:", error.request);
           } else {
-            // Something happened in setting up the request that triggered an Error
             console.error("Error:", error.message);
           }
           setErrorMessage("Failed to submit. Please try again.");
         });
     }
   };
-  console.log(content);
+
   return (
     <div>
       <div
@@ -74,10 +72,13 @@ function Candetect({ title, content }) {
           width: "100%",
         }}
       >
-        <h1>{title}</h1>
+        <h1>Breast Cancer Detector</h1>
       </div>
 
-      <p style={{ marginLeft: "40px" }}>{content}</p>
+      <p style={{ marginLeft: "40px" }}>
+        Detect breast cancer early with our advanced screening technology.Get
+        accurate results and timely treatment for better outcomes.
+      </p>
 
       <div className="overallContainer">
         <div className="dragandbutton">
@@ -89,7 +90,7 @@ function Candetect({ title, content }) {
               className="file-input"
               onChange={handleFileInputChange}
             />
-            {imageUrl ? null : (
+            {imageFile ? null : (
               <div>
                 <label htmlFor="file-input" className="upload-label">
                   <span>Drop Image Here</span> <span>-or-</span>{" "}
@@ -101,10 +102,10 @@ function Candetect({ title, content }) {
               </div>
             )}
 
-            {imageUrl && (
+            {imageFile && (
               <div className="image-preview">
                 <img
-                  src={imageUrl}
+                  src={URL.createObjectURL(imageFile)}
                   alt="Uploaded"
                   className="full-size-image"
                 ></img>
@@ -132,7 +133,12 @@ function Candetect({ title, content }) {
         </div>
         <div>
           <Card title="Output" hoverable>
-            <textarea className="text-area" placeholder="" />
+            <textarea
+              className="text-area"
+              placeholder=""
+              value={loading ? "Loading..." : responseData}
+              readOnly
+            />
           </Card>
         </div>
       </div>
