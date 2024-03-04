@@ -6,7 +6,7 @@ import deleteicon from "../assets/delete-.svg";
 import axios from "axios";
 // import edit from "../assets/edit-1.svg";
 
-function Candetect({ title }) {
+function Candetect({ title, content }) {
   const [imageUrl, setImageUrl] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -60,7 +60,7 @@ function Candetect({ title }) {
         });
     }
   };
-
+  console.log(content);
   return (
     <div>
       <div
@@ -77,10 +77,8 @@ function Candetect({ title }) {
         <h1>{title}</h1>
       </div>
 
-      <p style={{ marginLeft: "40px" }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <p style={{ marginLeft: "40px" }}>{content}</p>
+
       <div className="overallContainer">
         <div className="dragandbutton">
           <div className="image-upload-box">

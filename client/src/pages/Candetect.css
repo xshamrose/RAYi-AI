@@ -166,3 +166,8 @@
     transform: scale(1.1);
     color: #000000;
   }
+
+  .compass{
+    height: 30px;
+    width: 30px;
+  }

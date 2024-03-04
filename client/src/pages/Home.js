@@ -10,9 +10,11 @@ import { Layout, Button, theme } from "antd";
 import { AntDesignOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
+import cancer from "../assets/pink.svg";
+// import count from "../assets/count.svg";
 // import Header from "./Header";
 const { Header, Sider, Content } = Layout;
-const Home = ({ setTitle }) => {
+const Home = ({ setTitle, setContent }) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const {
@@ -23,11 +25,16 @@ const Home = ({ setTitle }) => {
   const handleClickCardOne = () => {
     navigate("/Can");
     setTitle("Breast Cancer Detector");
-    // setHeaderTitle("Breast Cancer Detector");
+    setContent(
+      "Detect breast cancer early with our advanced screening technology.Get accurate results and timely treatment for better outcomes."
+    );
   };
   const handleClickCardTwo = () => {
     navigate("/Pipe");
     setTitle("Pipe Counting");
+    setContent(
+      "Our pipe counting detector uses advanced algorithms to accuratelycount and monitor pipes in industrial settings. Improve efficiency and reduce errors with automated pipe detection."
+    );
   };
   return (
     <Layout>
@@ -112,12 +119,13 @@ const Home = ({ setTitle }) => {
                 <circle fill="#552277" cx="400" cy="400" r="100" />
               </g>
             </svg>
+            <img src={cancer} alt="Cancer" className="compass" />
             <div className="card__content">
               <p className="card__title">Breast Cancer Detector</p>
               <p className="card__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco.
+                Detect breast cancer early with our advanced screening
+                technology. Get accurate results and timely treatment for better
+                outcomes.
               </p>
             </div>
           </div>
@@ -153,12 +161,14 @@ const Home = ({ setTitle }) => {
                 <circle cx="390" cy="382" r="8" />
               </g>
             </svg>
+            {/* <img src={count} alt="Counting" className="count" /> */}
             <div className="card__content">
               <p className="card__title">Pipe Counting</p>
               <p className="card__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco.
+                Our pipe counting detector uses advanced algorithms to
+                accurately count and monitor pipes in industrial settings.
+                Improve efficiency and reduce errors with automated pipe
+                detection.
               </p>
             </div>
           </div>
