@@ -86,8 +86,8 @@ function Candetect() {
       </div>
 
       <p style={{ marginLeft: "40px" }}>
-        Detect breast cancer early with our advanced screening technology.Get
-        accurate results and timely treatment for better outcomes.
+        Enter the Histopathological image of the breast to predict the
+        diagnosis.
       </p>
 
       <div className="overallContainer">
