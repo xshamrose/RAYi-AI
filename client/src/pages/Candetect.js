@@ -19,11 +19,21 @@ function Candetect() {
 
   const handleClearImage = () => {
     setImageFile(null);
+    //reset the file input
+    const fileInput = document.getElementById("file-input");
+    if (fileInput) {
+      fileInput.value = "";
+    }
     setErrorMessage("");
   };
 
   const handleDeleteImage = () => {
     setImageFile(null);
+    //reset the file input
+    const fileInput = document.getElementById("file-input");
+    if (fileInput) {
+      fileInput.value = "";
+    }
   };
 
   const handleSubmit = () => {
