@@ -220,11 +220,12 @@
       background: var(--background);
       cursor: pointer;
       transition: all 0.2s;
-      font-size: 12px;
+      font-size: 17px;
       padding: 0.7em 1.8em;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       color: #fff;
+      
       display: contents;
      }
      
@@ -241,8 +242,6 @@
       background: var(--background);
       border-radius: 4px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      white-space: nowrap; /* Prevent text from wrapping to a new line */
-      width: auto; 
     }
     
     .tooltip::before {
@@ -257,13 +256,13 @@
     }
     
     .tooltip-container:hover .tooltip {
-      top: -45px;
+      top: -55px;
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
       transform: translateX(-50%) scale(1);
       font-size: medium;
-      width: auto;
+      width: fit-content;
     }
     .tooltip-container:hover {
       transform: scale(0.9);

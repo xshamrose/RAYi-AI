@@ -20,7 +20,7 @@ const navigate=useNavigate()
 
   const handleClearImage = () => {
     setImageFile(null);
-    
+    //reset the file input
     const fileInput = document.getElementById("file-input");
     if (fileInput) {
       fileInput.value = "";
@@ -30,7 +30,7 @@ const navigate=useNavigate()
 
   const handleDeleteImage = () => {
     setImageFile(null);
-    
+    //reset the file input
     const fileInput = document.getElementById("file-input");
     if (fileInput) {
       fileInput.value = "";
@@ -162,7 +162,7 @@ navigate("/chatbox")
       <div className="ask-me-icon">
       <div class="tooltip-container">
   <span class="tooltip">Ask AI</span>
-  <span class="text" onClick={handleAipage}><img alt="Ai" src={ai} style={{height:"60px"}} /></span>  
+  <span class="text" onClick={handleAipage}><img alt="Ai" src={ai} style={{height:"50px"}} /></span>  
 </div>
       
     </div>

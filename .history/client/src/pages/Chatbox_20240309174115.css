@@ -38,7 +38,6 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
-    margin-bottom: 10px;
    }
    
    .message.assistant {

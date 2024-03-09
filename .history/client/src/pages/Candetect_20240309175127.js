@@ -20,7 +20,7 @@ const navigate=useNavigate()
 
   const handleClearImage = () => {
     setImageFile(null);
-    
+    //reset the file input
     const fileInput = document.getElementById("file-input");
     if (fileInput) {
       fileInput.value = "";
@@ -30,7 +30,7 @@ const navigate=useNavigate()
 
   const handleDeleteImage = () => {
     setImageFile(null);
-    
+    //reset the file input
     const fileInput = document.getElementById("file-input");
     if (fileInput) {
       fileInput.value = "";

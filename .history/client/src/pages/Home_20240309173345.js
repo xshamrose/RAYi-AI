@@ -29,7 +29,11 @@ const Home = () => {
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Avatar
-        
+          size={{
+         
+            xl: 80,
+         
+          }}
           icon={<AntDesignOutlined />}
         />
       </Sider>
