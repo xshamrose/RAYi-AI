@@ -4,13 +4,13 @@ import { Card } from "antd";
 import deleteicon from "../assets/delete-.svg";
 import ai from "../assets/ai_img.svg"
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 function Candetect() {
   const [imageFile, setImageFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [responseData, setResponseData] = useState("");
-const navigate=useNavigate()
+
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -69,9 +69,7 @@ const navigate=useNavigate()
         });
     }
   };
-const handleAipage=()=>{
-navigate("/chatbox")
-}
+
   return (
     <div>
       <div
@@ -161,8 +159,8 @@ navigate("/chatbox")
       </div>
       <div className="ask-me-icon">
       <div class="tooltip-container">
-  <span class="tooltip">Ask AI</span>
-  <span class="text" onClick={handleAipage}><img alt="Ai" src={ai} style={{height:"60px"}} /></span>  
+  <span class="tooltip">ask me anything</span>
+  <span class="text"><img alt="Ai" src={ai} style={{height:"60px"}} /></span>  
 </div>
       
     </div>

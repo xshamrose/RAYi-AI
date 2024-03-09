@@ -1,0 +1,94 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   }
+   
+   /* Chat container */
+   .chat-container {
+    width: 400px;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    background-color: #fff;
+    color: #333;
+   }
+   
+   /* Dark mode styles */
+   .dark-mode {
+    background-color: #333;
+    color: #fff;
+   }
+   
+   /* Messages container */
+   .messages {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    margin-bottom: 20px;
+   }
+   
+   /* Individual messages */
+   .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    color: #333;
+   }
+   
+   /* Input container */
+   .input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   
+   /* Input field */
+   input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+   }
+   
+   /* Send button */
+   button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+   }
+   
+   /* Dark mode button */
+   .dark-mode-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+   }
+   
+   /* Hover effects */
+   button:hover, .dark-mode-button:hover {
+    background-color: #0056b3;
+   }
+   
+   /* Dark mode hover effect */
+   .dark-mode-button:hover {
+    background-color: #444;
+   }
+   

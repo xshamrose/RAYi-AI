@@ -256,7 +256,7 @@
     }
     
     .tooltip-container:hover .tooltip {
-      top: -55px;
+      top: -50px;
       opacity: 1;
       visibility: visible;
       pointer-events: auto;

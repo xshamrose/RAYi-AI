@@ -225,7 +225,8 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       color: #fff;
-      
+      height: auto;
+      width: auto;
       display: contents;
      }
      
@@ -256,7 +257,7 @@
     }
     
     .tooltip-container:hover .tooltip {
-      top: -55px;
+      top: -45px;
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
@@ -265,4 +266,4 @@
     .tooltip-container:hover {
       transform: scale(0.9);
     }
-   
+    

@@ -215,7 +215,7 @@
     cursor: pointer;
     z-index: 1000; }
     .tooltip-container {
-      --background: linear-gradient(45deg, #22d3ee, #1f9df5); /* Default background */
+    /* Default background */
       position: relative;
       background: var(--background);
       cursor: pointer;
@@ -225,8 +225,8 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       color: #fff;
-      
-      display: contents;
+      height: auto;
+      width: auto;
      }
      
     .tooltip {
@@ -256,7 +256,7 @@
     }
     
     .tooltip-container:hover .tooltip {
-      top: -55px;
+      top: -45px;
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
@@ -265,4 +265,4 @@
     .tooltip-container:hover {
       transform: scale(0.9);
     }
-   
+    
