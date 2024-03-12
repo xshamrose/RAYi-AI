@@ -164,17 +164,17 @@ function Candetect() {
 if (title === "Breast Cancer Detector") {
   return (
      <div className="contentbox-below">
-       <p className="overview-text"><strong>Overview:</strong><p> Our breast cancer detection model utilizes state-of-the-art deep learning techniques to analyze histopathological images of breast tissue and provide accurate predictions regarding the presence or absence of cancerous cells.</p></p>
-       <p className="how-it-works-text"><strong>How it Works: </strong> <p>Users upload histopathological images of breast tissue to the web interface for analysis. Leveraging convolutional neural networks (CNNs) trained on vast datasets of annotated breast tissue images, the model processes these images with intricate pattern recognition techniques.</p></p>
+       <p className="overview-text"><strong>Overview:</strong>Our breast cancer detection model utilizes state-of-the-art deep learning techniques to analyze histopathological images of breast tissue and provide accurate predictions regarding the presence or absence of cancerous cells.</p>
+       <p className="how-it-works-text"><strong>How it Works: </strong>Users upload histopathological images of breast tissue to the web interface for analysis. Leveraging convolutional neural networks (CNNs) trained on vast datasets of annotated breast tissue images, the model processes these images with intricate pattern recognition techniques.</p>
      </div>
   );
  } else if (title === "Face Detector") {
   return (
      <div className="contentbox-below">
-       <p className="overview-text"><strong>Overview:</strong><p> Our cutting-edge face recognition model is designed to accurately identify individuals from images, empowering users with seamless identity verification capabilities.</p></p>
-       <p className="how-it-works-text"><strong>How it Works: </strong><p>Using our intuitive web interface, users can upload images containing faces for analysis. Our model swiftly processes these images, identifying individuals with high accuracy and providing detailed recognition results.</p></p>
-       <p className="how-it-works-text"><strong>Download Now:</strong> <p>
-        Get the mobile application now and experience the power of facial recognition on your smartphone. Click the button below to download: </p></p> 
+       <p className="overview-text"><strong>Overview:</strong>Our cutting-edge face recognition model is designed to accurately identify individuals from images, empowering users with seamless identity verification capabilities.</p>
+       <p className="how-it-works-text"><strong>How it Works: </strong> Using our intuitive web interface, users can upload images containing faces for analysis. Our model swiftly processes these images, identifying individuals with high accuracy and providing detailed recognition results.</p>
+       <p className="how-it-works-text"><strong>Download Now:</strong>
+        Get the mobile application now and experience the power of facial recognition on your smartphone. Click the button below to download:</p> 
         <div className="app_btn">
         
         
@@ -192,8 +192,8 @@ if (title === "Breast Cancer Detector") {
  } else if (title === "Pipe Counting") {
   return (
      <div className="contentbox-below">
-       <p className="overview-text"><strong>Overview:</strong> <p>Our pipe counting model utilizes advanced computer vision algorithms to accurately detect and count pipes within images.</p></p>
-       <p className="how-it-works-text"><strong>How it Works: </strong> <p>Users can upload images containing pipe networks to the web interface. The model employs sophisticated image processing techniques, including object detection and instance segmentation, to identify individual pipes within the scene.</p></p>
+       <p className="overview-text"><strong>Overview:</strong> Our pipe counting model utilizes advanced computer vision algorithms to accurately detect and count pipes within images.</p>
+       <p className="how-it-works-text"><strong>How it Works: </strong> Users can upload images containing pipe networks to the web interface. The model employs sophisticated image processing techniques, including object detection and instance segmentation, to identify individual pipes within the scene.</p>
      </div>
   );
  }
@@ -293,7 +293,7 @@ if (title === "Breast Cancer Detector") {
                 <p className="job">Employee_Id: {responseData.employee_id}</p>
               </div>
             </>
-          ) : null 
+          ) : null // Ensure there's a fallback case, even if it's just rendering nothing
         )
       )}
     </div>

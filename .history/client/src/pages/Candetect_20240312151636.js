@@ -119,7 +119,8 @@ function Candetect() {
            
             const base64Image = response.data.base64_image_result; // Adjust this key based on your actual response structure
  const totalCount = response.data.total_count; // Adjust this key based on your actual response structure
-
+console.log(base64Image);
+console.log(totalCount)
  // Set the response data in a new format
  setResponseData({
     base64Image: base64Image,
@@ -164,17 +165,17 @@ function Candetect() {
 if (title === "Breast Cancer Detector") {
   return (
      <div className="contentbox-below">
-       <p className="overview-text"><strong>Overview:</strong><p> Our breast cancer detection model utilizes state-of-the-art deep learning techniques to analyze histopathological images of breast tissue and provide accurate predictions regarding the presence or absence of cancerous cells.</p></p>
-       <p className="how-it-works-text"><strong>How it Works: </strong> <p>Users upload histopathological images of breast tissue to the web interface for analysis. Leveraging convolutional neural networks (CNNs) trained on vast datasets of annotated breast tissue images, the model processes these images with intricate pattern recognition techniques.</p></p>
+       <p className="overview-text"><strong>Overview:</strong>Our breast cancer detection model utilizes state-of-the-art deep learning techniques to analyze histopathological images of breast tissue and provide accurate predictions regarding the presence or absence of cancerous cells.</p>
+       <p className="how-it-works-text"><strong>How it Works: </strong>Users upload histopathological images of breast tissue to the web interface for analysis. Leveraging convolutional neural networks (CNNs) trained on vast datasets of annotated breast tissue images, the model processes these images with intricate pattern recognition techniques.</p>
      </div>
   );
  } else if (title === "Face Detector") {
   return (
      <div className="contentbox-below">
-       <p className="overview-text"><strong>Overview:</strong><p> Our cutting-edge face recognition model is designed to accurately identify individuals from images, empowering users with seamless identity verification capabilities.</p></p>
-       <p className="how-it-works-text"><strong>How it Works: </strong><p>Using our intuitive web interface, users can upload images containing faces for analysis. Our model swiftly processes these images, identifying individuals with high accuracy and providing detailed recognition results.</p></p>
-       <p className="how-it-works-text"><strong>Download Now:</strong> <p>
-        Get the mobile application now and experience the power of facial recognition on your smartphone. Click the button below to download: </p></p> 
+       <p className="overview-text"><strong>Overview:</strong>Our cutting-edge face recognition model is designed to accurately identify individuals from images, empowering users with seamless identity verification capabilities.</p>
+       <p className="how-it-works-text"><strong>How it Works: </strong> Using our intuitive web interface, users can upload images containing faces for analysis. Our model swiftly processes these images, identifying individuals with high accuracy and providing detailed recognition results.</p>
+       <p className="how-it-works-text">Download Now:
+        Get the mobile application now and experience the power of facial recognition on your smartphone. Click the button below to download:</p> 
         <div className="app_btn">
         
         
@@ -192,8 +193,8 @@ if (title === "Breast Cancer Detector") {
  } else if (title === "Pipe Counting") {
   return (
      <div className="contentbox-below">
-       <p className="overview-text"><strong>Overview:</strong> <p>Our pipe counting model utilizes advanced computer vision algorithms to accurately detect and count pipes within images.</p></p>
-       <p className="how-it-works-text"><strong>How it Works: </strong> <p>Users can upload images containing pipe networks to the web interface. The model employs sophisticated image processing techniques, including object detection and instance segmentation, to identify individual pipes within the scene.</p></p>
+       <p className="overview-text"><strong>Overview:</strong> Our pipe counting model utilizes advanced computer vision algorithms to accurately detect and count pipes within images.</p>
+       <p className="how-it-works-text"><strong>How it Works: </strong> Users can upload images containing pipe networks to the web interface. The model employs sophisticated image processing techniques, including object detection and instance segmentation, to identify individual pipes within the scene.</p>
      </div>
   );
  }
@@ -260,44 +261,41 @@ if (title === "Breast Cancer Detector") {
           </div>
           <div>
             <Card title="Output" hoverable>
-            <div className="text-area">
- {loading ? (
-    <div className="loader-all">
-      <div className="loader"></div>
-      <p>loading...</p>
-    </div>
- ) : (
-    <div>
-      {typeof responseData === 'string' ? (
-        <pre>{responseData}</pre>
+              <div className="text-area">
+              {loading ? (
+ <div className="loader-all">
+    <div className="loader"></div>
+    <p>loading...</p>
+ </div>
+) : (
+ <div>
+    {typeof responseData === 'string' ? (
+      <pre>{responseData}</pre>
+    ) : (
+      // Check if the responseData has the keys we expect for the "Pipe Counting" case
+      responseData.base64Image && responseData.totalCount ? (
+        <>
+          <div className="pipe-counting-result">
+            <img src={`data:image/png;base64,${responseData.base64Image}`} alt="Processed" className="uploadimage"/>
+            <p className="pipe_para">Total Count: {responseData.totalCount}</p>
+          </div>
+        </>
       ) : (
-        // Assuming responseData is an object with specific keys for different cases
-        responseData.base64Image && responseData.totalCount ? (
-          <>
-            <div className="pipe-counting-result">
-              <img src={`data:image/png;base64,${responseData.base64Image}`} alt="Processed" className="uploadimage"/>
-              <p className="pipe_para">Total Count: {responseData.totalCount}</p>
+        <>
+          <div className="idcard">
+            <div className="idcard-border-top"></div>
+            <div className="img">
+              <img src={responseData.image} alt="Uploaded" className="uploadimage"/>
             </div>
-          </>
-        ) : (
-          // Assuming responseData has keys for the Face Detector case
-          responseData.detected_user ? (
-            <>
-              <div className="idcard">
-                <div className="idcard-border-top"></div>
-                <div className="idcardimg">
-                 <img src={responseData.image} alt="Uploaded" className="idcardimgall"/>
-                </div>
-                <span>Username: {responseData.detected_user}</span>
-                <p className="job"> Role: {responseData.role}</p>
-                <p className="job">Employee_Id: {responseData.employee_id}</p>
-              </div>
-            </>
-          ) : null 
-        )
-      )}
-    </div>
- )}
+            <span>Username: {(responseData.detected_user)}</span>
+            <p className="job"> Role: {responseData.role}</p>
+            <p className="job">Employee_Id: {responseData.employee_id}</p>
+          </div>
+        </>
+      )
+    )}
+ </div>
+)}
  </div>
 </Card>
 </div>

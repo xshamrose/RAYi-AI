@@ -32,7 +32,7 @@ const Home = () => {
     navigate("/Pipecounting", {
       state: {
         title: "Pipe Counting",
-        subtitle: "Upload an image of pipes, API will count it for you ",
+        subtitle: "Our pipe counting detector uses advanced algorithms to accurately count and monitor pipes in industrial settings. Improve efficiency and reduce errors with automated pipe detection.",
       },
     });
  };

@@ -311,16 +311,12 @@
       font-size: 12px;
      }
      
-     .idcardimg {
+     .idcard .img {
       width: 70px;
       height: 80px;
       border-radius: 15px;
       margin: auto;
-      margin-top: 20px;
-     }
-     .idcardimgall{
-      width: 70px;
-      height: 80px;
+      margin-top: 25px;
      }
      .idcard:hover {
       box-shadow: 0 8px 50px #23232333;
@@ -369,8 +365,8 @@
     }
     .app_btn{
       display: flex;
-      
-      
+      margin-left: 50px;
+      margin-top: 30px;
     }
 
     .pipe-counting-result{
@@ -386,13 +382,13 @@
     }
 
 .overview-text {
- 
+  font-weight: bold;
   font-size: 1em;
   margin-bottom: 10px;
  }
  
  .how-it-works-text {
- 
+  font-weight: bold;
   font-size: 1em;
   animation: fadeIn 1s ease-in;
  }
@@ -401,9 +397,4 @@
   from { opacity: 0; }
   to { opacity: 1; }
  }
- .contentbox-below{
-  display: flex;
-  flex-direction: column;
-  width: 900px;
-  margin-left: 50px;
- }
+ 

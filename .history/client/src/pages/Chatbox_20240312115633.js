@@ -4,10 +4,12 @@ import enter from "../assets/enter.svg";
 import axios from 'axios';
 const Chatbox = () => {
  const [loading, setLoading] = useState(false);
+ const [assistantWords, setAssistantWords] = useState([]);
+
  const [messages, setMessages] = useState([]);
  const [input, setInput] = useState('');
  const [darkMode, setDarkMode] = useState(true);
-
+//  const [assistantWords, setAssistantWords] = useState([]);
 
  const fetchData = async (message) => {
   setLoading(true);
@@ -17,7 +19,7 @@ const Chatbox = () => {
      });
      const assistantMessage = response.data.choices[0].message.content;
      // Split the assistant's message into words and set assistantWords
-     
+     setAssistantWords(assistantMessage.split(' '));
      setMessages([...messages, { role: 'user', content: message }, { role: 'assistant', content: assistantMessage }]);
   } catch (error) {
      console.error('Error fetching data:', error);
@@ -52,7 +54,11 @@ const Chatbox = () => {
     </div>
   ))}
  {loading && <div className="loading">Loading...</div>}
-
+ {assistantWords.map((word, index) => (
+   <span key={index} className="message assistant-word" style={{ animationDelay: `${index * 0.5}s` }}>
+      [word] 
+     </span>
+  ))}
 </div>
 
       <div className="input-container">

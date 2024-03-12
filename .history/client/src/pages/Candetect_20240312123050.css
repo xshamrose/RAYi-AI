@@ -311,21 +311,17 @@
       font-size: 12px;
      }
      
-     .idcardimg {
+     .idcard .img {
       width: 70px;
       height: 80px;
       border-radius: 15px;
       margin: auto;
-      margin-top: 20px;
-     }
-     .idcardimgall{
-      width: 70px;
-      height: 80px;
+      margin-top: 25px;
      }
      .idcard:hover {
       box-shadow: 0 8px 50px #23232333;
      }
-     .rayi-button {
+     .playstore-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -340,14 +336,14 @@
       text-decoration: none;
     }
     
-    .rayi-button:hover {
+    .playstore-button:hover {
       background-color: transparent;
       color: rgba(0, 0, 0, 1);
     }
     
     .icon {
-      height: 1.9rem;
-      width: 1.9rem;
+      height: 1.5rem;
+      width: 1.5rem;
     }
     
     .texts {
@@ -369,41 +365,4 @@
     }
     .app_btn{
       display: flex;
-      
-      
     }
-
-    .pipe-counting-result{
-      height: auto;
-      width: auto;
-    }
-    .uploadimage{
-      height: 300px;
-      width: 500px;
-    }
-    .pipe_para{
-      font-weight: bold;
-    }
-
-.overview-text {
- 
-  font-size: 1em;
-  margin-bottom: 10px;
- }
- 
- .how-it-works-text {
- 
-  font-size: 1em;
-  animation: fadeIn 1s ease-in;
- }
- 
- @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
- }
- .contentbox-below{
-  display: flex;
-  flex-direction: column;
-  width: 900px;
-  margin-left: 50px;
- }

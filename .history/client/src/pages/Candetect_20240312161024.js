@@ -192,8 +192,8 @@ if (title === "Breast Cancer Detector") {
  } else if (title === "Pipe Counting") {
   return (
      <div className="contentbox-below">
-       <p className="overview-text"><strong>Overview:</strong> <p>Our pipe counting model utilizes advanced computer vision algorithms to accurately detect and count pipes within images.</p></p>
-       <p className="how-it-works-text"><strong>How it Works: </strong> <p>Users can upload images containing pipe networks to the web interface. The model employs sophisticated image processing techniques, including object detection and instance segmentation, to identify individual pipes within the scene.</p></p>
+       <p className="overview-text"><strong>Overview:</strong> Our pipe counting model utilizes advanced computer vision algorithms to accurately detect and count pipes within images.</p>
+       <p className="how-it-works-text"><strong>How it Works: </strong> Users can upload images containing pipe networks to the web interface. The model employs sophisticated image processing techniques, including object detection and instance segmentation, to identify individual pipes within the scene.</p>
      </div>
   );
  }
